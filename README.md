@@ -16,6 +16,10 @@ A minimalist typing‑speed test where you type real code snippets and measure y
 ![dependencies](https://img.shields.io/badge/dependencies-0-88c0d0?style=flat-square)
 [![license: MIT](https://img.shields.io/badge/license-MIT-bd93f9?style=flat-square)](LICENSE)
 
+<br>
+
+⭐ **If you enjoy it, a star helps a lot** — I'm a student, and it genuinely makes a difference.
+
 </div>
 
 ---
@@ -124,6 +128,12 @@ fork: **Settings → Pages → Build and deployment → Source → Deploy from a
 Plain **HTML · CSS · JavaScript**, the [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 and [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca) fonts, and a lot of
 admiration for [Monkeytype](https://monkeytype.com).
+
+## ⭐ Support
+
+If codemonkey made you a little faster — or just made you smile — consider giving it a
+**star**. It helps more people discover the project, and as a student building in public,
+it genuinely means a lot. Thank you 🙏
 
 ## License
 
