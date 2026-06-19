@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="codemonkey — a typing test for code">
+  <defs>
+    <style>
+      .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .sans { font-family: 'Lexend Deca', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="#323437"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#e2b714"/>
+
+  <!-- theme dots -->
+  <g>
+    <circle cx="92"  cy="84" r="11" fill="#e2b714"/>
+    <circle cx="128" cy="84" r="11" fill="#bd93f9"/>
+    <circle cx="164" cy="84" r="11" fill="#88c0d0"/>
+    <circle cx="200" cy="84" r="11" fill="#ca4754"/>
+  </g>
+  <text x="1108" y="92" text-anchor="end" class="mono" font-size="26" fill="#646669">wpm · accuracy · leaderboard</text>
+
+  <!-- wordmark -->
+  <text x="88" y="220" class="mono" font-size="104" font-weight="700">
+    <tspan fill="#646669">🐒 </tspan><tspan fill="#e2b714">code</tspan><tspan fill="#d1d0c5">monkey</tspan>
+  </text>
+  <text x="92" y="276" class="sans" font-size="36" fill="#646669">// monkeytype, but for code — race through real code snippets</text>
+
+  <!-- code panel -->
+  <rect x="88" y="324" width="1024" height="226" rx="18" fill="#2c2e31"/>
+  <g class="mono" font-size="34">
+    <text x="128" y="384">
+      <tspan fill="#d1d0c5">function</tspan><tspan fill="#646669"> wpm(chars, seconds) {</tspan>
+    </text>
+    <text x="128" y="436">
+      <tspan fill="#646669">&#160;&#160;</tspan><tspan fill="#d1d0c5">return (chars / 5) / (sec</tspan><tspan fill="#e2b714">▏</tspan><tspan fill="#565a5e">onds / 60);</tspan>
+    </text>
+    <text x="128" y="488" fill="#565a5e">}</text>
+  </g>
+
+  <!-- footer -->
+  <text x="92" y="592" class="mono" font-size="28" fill="#646669">javascript&#160;&#160;·&#160;&#160;python&#160;&#160;·&#160;&#160;typescript&#160;&#160;·&#160;&#160;java&#160;&#160;·&#160;&#160;c++</text>
+  <text x="1108" y="592" text-anchor="end" class="sans" font-size="26" fill="#e2b714">fizzexual.github.io/Codemonkey</text>
+</svg>
