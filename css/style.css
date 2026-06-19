@@ -57,7 +57,12 @@
 html, body { height: 100%; }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 50% -10%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 42%),
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--text) 6%, transparent) 1px, transparent 0);
+  background-size: 100% 100%, 24px 24px;
+  background-attachment: fixed;
   color: var(--sub);
   font-family: "Lexend Deca", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 300;
@@ -72,6 +77,23 @@ body {
 button, select { font-family: inherit; color: inherit; cursor: pointer; }
 
 a { color: inherit; text-decoration: none; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* staggered page-load entrance */
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.top-bar    { animation: rise 0.5s ease both; }
+.config-bar { animation: rise 0.5s ease 0.08s both; }
+.stage      { animation: rise 0.55s ease 0.16s both; }
+.bottom-bar { animation: rise 0.5s ease 0.24s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
 
 .app {
   min-height: 100vh;
@@ -98,7 +120,12 @@ a { color: inherit; text-decoration: none; }
   color: var(--text);
   letter-spacing: -0.5px;
 }
-.logo-mark { font-size: 1.7rem; line-height: 1; transform: translateY(1px); }
+.logo-mark { display: block; width: 34px; height: 34px; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.logo-mark .m-face, .logo-mark .m-ear { fill: var(--accent); }
+.logo-mark .m-inner, .logo-mark .m-feat { fill: var(--bg); }
+.logo-mark .m-shade { fill: rgba(0, 0, 0, 0.13); }
+.logo-mark .m-mouth { fill: none; stroke: var(--bg); stroke-width: 2; stroke-linecap: round; }
+.logo:hover .logo-mark { transform: rotate(-9deg) scale(1.06); }
 .logo-accent { color: var(--accent); }
 .logo-text { transition: opacity 0.15s ease; }
 .logo:hover .logo-text { opacity: 0.85; }
@@ -119,7 +146,9 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   gap: 0.4rem 0.8rem;
   background: var(--bg-alt);
+  border: 1px solid color-mix(in srgb, var(--text) 5%, transparent);
   border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
   padding: 0.55rem 0.9rem;
   font-size: 0.82rem;
   font-weight: 400;
@@ -133,7 +162,7 @@ a { color: inherit; text-decoration: none; }
   transition: color 0.12s ease, background 0.12s ease;
   white-space: nowrap;
 }
-.config-btn:hover { color: var(--text); }
+.config-btn:hover { color: var(--text); background: color-mix(in srgb, var(--text) 7%, transparent); }
 .config-btn.active { color: var(--accent); }
 
 .theme-group { margin-left: auto; }
@@ -222,6 +251,7 @@ a { color: inherit; text-decoration: none; }
   height: 1.6rem;
   background: var(--caret);
   border-radius: 2px;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--caret) 65%, transparent);
   top: 0; left: 0;
   transition: left 0.08s ease, top 0.08s ease;
   animation: caret-blink 1s steps(1) infinite;
@@ -275,6 +305,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 4.5rem;
   font-weight: 500;
   color: var(--accent);
+  text-shadow: 0 0 32px color-mix(in srgb, var(--accent) 28%, transparent);
   line-height: 1;
 }
 .pb-flag {
