@@ -75,15 +75,17 @@ Add a `[data-theme="your_theme"]` block of CSS variables in
 [`css/style.css`](css/style.css) and a matching entry in the `THEMES` list in
 [`js/themes.js`](js/themes.js).
 
-## Deployment
+## Deployment (GitHub Pages)
 
-The repo ships with a GitHub Actions workflow ([`.github/workflows/pages.yml`](.github/workflows/pages.yml))
-that publishes the site to GitHub Pages on every push to `main`. To enable it once:
+This is a static site served straight from the repo root — no build step. Enable
+Pages once:
 
-> **Settings → Pages → Build and deployment → Source → GitHub Actions**
+> **Settings → Pages → Build and deployment → Source → _Deploy from a branch_ →
+> Branch: `main` · `/ (root)` → Save**
 
-After that, every push deploys automatically to
-`https://fizzexual.github.io/Codemonkey/`.
+The site goes live at `https://fizzexual.github.io/Codemonkey/` within a minute,
+and every push to `main` redeploys automatically. The included `.nojekyll` file
+tells Pages to serve the files as-is (no Jekyll processing).
 
 ## Credits
 
