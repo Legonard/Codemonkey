@@ -209,7 +209,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.82rem;
   font-weight: 400;
 }
-.config-group { display: flex; align-items: center; gap: 0.15rem; }
+.config-group { display: flex; align-items: center; flex-wrap: wrap; gap: 0.2rem 0.15rem; }
 .config-sep { width: 1px; height: 18px; background: var(--sub-alt); opacity: 0.6; }
 .config-sep-flex { flex: 1; background: transparent; }
 .config-btn {

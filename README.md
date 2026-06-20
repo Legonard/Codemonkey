@@ -33,7 +33,10 @@ way Monkeytype does for words.
 
 ## Features
 
-- **Real code, not prose** — 40 idiomatic snippets across **JavaScript, Python, TypeScript, Java, and C++**.
+- **A near‑endless pool of correct content** — **274 hand‑written code snippets across 9 languages**
+  (JavaScript · Python · TypeScript · Java · C++ · Go · Rust · SQL · Bash), each verified to compile or
+  parse, **plus a `quotes` mode** of 70 famous programming & wisdom lines. No immediate repeats, and the
+  pool is trivially extensible — drop a string in a file and it shows up.
 - **Smart auto‑indentation** — press `Enter` and the next line's leading whitespace is
   filled in for you, so you only ever type the characters that matter (more below).
 - **Two modes**
@@ -100,18 +103,24 @@ Codemonkey/
 │   └── style.css     # layout + all 9 theme palettes (CSS variables)
 └── js/
     ├── themes.js     # theme registry + apply/persist
-    ├── snippets.js   # the code you type, per language
+    ├── snippets.js   # bootstrap: the language list
+    ├── snippets/     # one self‑contained file per language — the content you type
+    │   ├── javascript.js · python.js · typescript.js · java.js · cpp.js
+    │   ├── go.js · rust.js · sql.js · bash.js
+    │   └── quotes.js
     └── app.js        # typing engine, stats, graph, persistence
 ```
 
 ## Customizing
 
-**Add a snippet** — drop a string into the relevant array in
-[`js/snippets.js`](js/snippets.js). Use spaces (not tabs) and skip trailing whitespace;
-the engine normalizes and auto‑indents for you.
+**Add a snippet** — drop a string into the array in the matching
+[`js/snippets/<language>.js`](js/snippets) file. Use spaces (not tabs) and skip trailing
+whitespace; the engine normalizes and auto‑indents for you.
 
-**Add a language** — add a key to `CODE_SNIPPETS` plus an entry in `LANGUAGES` in the
-same file. The config bar and stats pick it up automatically.
+**Add a language** — create `js/snippets/<id>.js` containing
+`window.CODE_SNIPPETS["<id>"] = [ ... ]`, add a `<script>` tag for it in `index.html`,
+and add an entry to `LANGUAGES` in [`js/snippets.js`](js/snippets.js). The config bar and
+stats pick it up automatically.
 
 **Add a theme** — add a `[data-theme="your_theme"]` block of CSS variables in
 [`css/style.css`](css/style.css) and a matching entry in the `THEMES` list in
